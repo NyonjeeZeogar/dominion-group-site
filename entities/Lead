@@ -1,0 +1,75 @@
+{
+  "name": "Lead",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "description": "Full name of the lead"
+    },
+    "email": {
+      "type": "string",
+      "description": "Email address"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "filing_type": {
+      "type": "string",
+      "enum": [
+        "individual",
+        "business",
+        "both"
+      ],
+      "description": "Type of tax filing needed"
+    },
+    "services_needed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Services the lead is interested in"
+    },
+    "annual_income_range": {
+      "type": "string",
+      "enum": [
+        "under_50k",
+        "50k_100k",
+        "100k_250k",
+        "250k_500k",
+        "over_500k"
+      ],
+      "description": "Approximate annual income range"
+    },
+    "is_business_owner": {
+      "type": "boolean",
+      "description": "Whether the lead owns a business"
+    },
+    "message": {
+      "type": "string",
+      "description": "Additional message or notes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "contacted",
+        "qualified",
+        "converted",
+        "lost"
+      ],
+      "default": "new",
+      "description": "Lead status"
+    },
+    "source": {
+      "type": "string",
+      "default": "website",
+      "description": "Where the lead came from"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "phone"
+  ]
+}
